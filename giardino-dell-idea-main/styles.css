@@ -1,0 +1,87 @@
+  :root {
+    --main-color: #333;
+    --secondary-color: #666;
+    --font-family: 'Arial', sans-serif;
+  }
+
+
+  body {
+    color: var(--main-color);
+    font-family: var(--font-family);
+  }
+
+
+
+<style>
+  body {
+    background-image: linear-gradient(to top, #d0f0c0, #a8e6ff);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .character {
+    position: absolute;
+    z-index: 2;
+    font-size: 2em;
+  }
+  #mimi {
+    top: 80px;
+    left: 30px;
+  }
+  #ugo {
+    bottom: 100px;
+    right: 30px;
+  }
+  .garden-icons {
+    position: relative;
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+  }
+</style>
+
+<div class="garden">
+  <div id="tree-visual">
+    <div class="tree-base">🌱</div>
+    <div class="tree-growth" id="tree-growth"></div>
+    <div class="garden-icons">
+      <span>🦋</span>
+      <span>🌼</span>
+      <span>🌟</span>
+    </div>
+  </div>
+  <div id="mimi" class="character" title="Mimi la Cupolina">🧚‍♀️</div>
+  <div id="ugo" class="character" title="Ugo il Folletto delle Idee">🧝‍♂️</div>
+</div>
+
+
+.tree-growth.falling span {
+  animation: fall 0.6s ease-in forwards;
+}
+
+@keyframes fall {
+  0%   { transform: translateY(0) rotate(0); opacity: 1; }
+  100% { transform: translateY(60px) rotate(90deg); opacity: 0; }
+}
+
+
+#diario-content h3 {
+  color: #4e342e;
+  margin-bottom: 5px;
+}
+
+.diario-data {
+  font-style: italic;
+  color: #6d4c41;
+  margin-top: 8px;
+}
+
+.bonus-speciale {
+  margin-top: 12px;
+  padding: 10px;
+  background: #fff3e0;
+  border-left: 4px solid #ffb300;
+  border-radius: 6px;
+  color: #bf360c;
+  font-style: italic;
+  animation: fadeInBonus 0.6s ease-in;
+}
